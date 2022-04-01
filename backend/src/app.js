@@ -11,11 +11,9 @@ const port = process.env.PORT || 1000
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
+app.use(cors())
 app.use(postRequests)
 app.use(getRequests)
-app.use(cors({
-	origin: 'http://localhost:3001'
-}))
 
 app.listen(port, () => {
 	console.log(`server is up on port ${port}`)
